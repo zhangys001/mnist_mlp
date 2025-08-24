@@ -19,7 +19,7 @@ def show_matrix(mat, name):
     pass
 
 class MNIST_MLP(object):
-    def __init__(self, batch_size=100, input_size=784, hidden1=128, hidden2=128, out_classes=10, lr=0.01, max_epoch=15, print_iter=100):
+    def __init__(self, batch_size=10, input_size=784, hidden1=256, hidden2=256, out_classes=10, lr=0.01, max_epoch=1, print_iter=100):
         self.batch_size = batch_size
         self.input_size = input_size
         self.hidden1 = hidden1
@@ -153,7 +153,7 @@ class MNIST_MLP(object):
         print('Accuracy in test set: %f' % accuracy)
 
 def build_mnist_mlp(param_dir='weight.npy'):
-    h1, h2, e = 128, 128, 10
+    h1, h2, e = 256, 256, 1
     mlp = MNIST_MLP(hidden1=h1, hidden2=h2, max_epoch=e)
     mlp.load_data()
     mlp.build_model()
